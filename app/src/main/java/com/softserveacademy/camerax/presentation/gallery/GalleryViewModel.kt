@@ -33,7 +33,7 @@ class GalleryViewModel @Inject constructor(
     private val photoRepository: PhotoRepository,
     private val audioRecorder: AudioRecorder,
     private val audioPlayer: AudioPlayer,
-    @ApplicationContext private val context: Context
+    @param:ApplicationContext private val context: Context
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(GalleryUiState())
@@ -67,7 +67,7 @@ class GalleryViewModel @Inject constructor(
     }
 
     fun startRecording(photoUri: String) {
-        audioFile = File(context.cacheDir, "${photoUri.hashCode()}.mp3")
+        audioFile = File(context.cacheDir, "${photoUri.hashCode()}.m4a")
         audioRecorder.start(audioFile!!)
         _uiState.value = _uiState.value.copy(isRecording = true)
     }

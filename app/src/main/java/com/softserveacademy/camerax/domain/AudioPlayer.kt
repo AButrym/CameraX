@@ -17,10 +17,8 @@ class AndroidAudioPlayer (
 
     override fun play(file: File) {
         val fileURI = Uri.fromFile(file)
-        MediaPlayer.create(context, fileURI).apply {
-            player = this
-            start()
-        }
+        player = MediaPlayer.create(context, fileURI)
+        player?.start()
     }
 
     override fun stop() {

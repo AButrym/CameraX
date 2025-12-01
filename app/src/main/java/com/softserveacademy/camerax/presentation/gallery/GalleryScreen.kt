@@ -1,5 +1,6 @@
 package com.softserveacademy.camerax.presentation.gallery
 
+import com.softserveacademy.camerax.R
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -22,9 +23,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
+import coil3.request.error
+import coil3.request.placeholder
 import com.softserveacademy.camerax.presentation.gallery.components.PhotoPreview
 
 @Composable
@@ -59,7 +65,13 @@ fun GalleryScreen(viewModel: GalleryViewModel = hiltViewModel()) {
                         .clickable { selectedPhotoUri = photo.uri }
                 }
                 AsyncImage(
-                    model = photo.uri,
+                    model = ImageRequest.Builder(LocalContext.current)
+                        .data(photo.uri)
+                        .crossfade(true)
+                        .placeholder(R.drawable.ic_launcher_foreground)
+                        .error(R.drawable.ic_launcher_background)
+                        .build(),
+//                        photo.uri,
                     contentDescription = null,
                     modifier = modifier,
                     contentScale = ContentScale.Crop

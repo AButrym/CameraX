@@ -16,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android.supportsRtl="true"
         android.theme="@style/Theme.CameraX">
+        <property
+            android:name="android.app.attributionTags"
+            android:value="audio" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

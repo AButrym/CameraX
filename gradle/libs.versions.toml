@@ -1,7 +1,7 @@
 [versions]
-agp = "8.13.0"
+agp = "8.13.1"
 cameraCore = "1.5.1"
-kotlin = "2.2.10" # Set to 2.2.10 instead of 2.2.21 in order to match ksp stable version
+kotlin = "2.2.21" # Set to 2.2.10 instead of 2.2.21 in order to match ksp stable version
 coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -10,7 +10,7 @@ lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.11.0"
 composeBom = "2025.11.00"
 roomRuntime = "2.8.3"
-ksp = "2.2.10-2.0.2" # range of kotlin's versions ksp can handle
+ksp = "2.2.21-2.0.4" # range of kotlin's versions ksp can handle
 hilt = "2.57.2"
 dagger = "2.57.2"
 hiltCompose = "1.3.0"
